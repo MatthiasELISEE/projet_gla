@@ -8,18 +8,18 @@
 
 /* Généré avec GenMyModel à partir d'UML */
 class Salarie {
-    private $estManager;
+private $estManager;
+
     
     
-    
-	public function getDroitManager(){
-		// TODO	
-	}
+public function getDroitManager(){
+	// TODO	
+}
 	
     
-	public function setDroitManager($manager){
-		// TODO	
-	}
+public function setDroitManager($manager){
+	// TODO	
+}
 	
 }
 
@@ -28,46 +28,46 @@ class Salarie {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Client {
-    private $soldeClient;
+private $soldeClient;
+
+private $adresseClient;
+
+private $compteValide;
+
+public $reservations;
+
+public $emprunts;
+
     
-    private $adresseClient;
     
-    private $compteValide;
-    
-    public $reservations;
-    
-    public $emprunts;
-    
-    
-    
-	public function getAdresseClient(){
-		// TODO	
-	}
+public function getAdresseClient(){
+	// TODO	
+}
 	
     
-	public function setAdresseClient($adresse){
-		// TODO	
-	}
+public function setAdresseClient($adresse){
+	// TODO	
+}
 	
     
-	public function getCompteValide(){
-		// TODO	
-	}
+public function getCompteValide(){
+	// TODO	
+}
 	
     
-	public function setCompteValide($validation){
-		// TODO	
-	}
+public function setCompteValide($validation){
+	// TODO	
+}
 	
     
-	public function getSoldeClient(){
-		// TODO	
-	}
+public function getSoldeClient(){
+	// TODO	
+}
 	
     
-	public function setSoldeClient(){
-		// TODO	
-	}
+public function setSoldeClient(){
+	// TODO	
+}
 	
 }
 
@@ -76,58 +76,58 @@ class Client {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Emprunt {
-    private $idEmprunt;
+private $idEmprunt;
+
+private $idClient;
+
+private $idDocument;
+
+private $date_emprunt;
+
+private $date_retour;
+
+public $produit;
+
     
-    private $idClient;
     
-    private $idDocument;
-    
-    private $date_emprunt;
-    
-    private $date_retour;
-    
-    public $produit;
-    
-    
-    
-	public function getIdEmprunt(){
-		// TODO	
-	}
+public function getIdEmprunt(){
+	// TODO	
+}
 	
     
-	public function getIdClient(){
-		// TODO	
-	}
+public function getIdClient(){
+	// TODO	
+}
 	
     
-	public function getIdDocument(){
-		// TODO	
-	}
+public function getIdDocument(){
+	// TODO	
+}
 	
     
-	public function setIdDocument(){
-		// TODO	
-	}
+public function setIdDocument(){
+	// TODO	
+}
 	
     
-	public function getDate_emprunt(){
-		// TODO	
-	}
+public function getDate_emprunt(){
+	// TODO	
+}
 	
     
-	public function setDate_emprunt(){
-		// TODO	
-	}
+public function setDate_emprunt(){
+	// TODO	
+}
 	
     
-	public function getDate_retour(){
-		// TODO	
-	}
+public function getDate_retour(){
+	// TODO	
+}
 	
     
-	public function setDate_retour(){
-		// TODO	
-	}
+public function setDate_retour(){
+	// TODO	
+}
 	
 }
 
@@ -136,140 +136,140 @@ class Emprunt {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Produit {
-    private $idProd;
+private $idProd;
+
+private $nomProd;
+
+private $auteur;
+
+private $etat;
+
+private $categorie;
+
+private $edition;
+
+private $datePublic;
+
+private $quantite;
+
+private $noteDocument;
+
+private $description;
+
+private $emprunts;
+
+private $reservations;
+
     
-    private $nomProd;
     
-    private $auteur;
-    
-    private $etat;
-    
-    private $categorie;
-    
-    private $edition;
-    
-    private $datePublic;
-    
-    private $quantite;
-    
-    private $noteDocument;
-    
-    private $description;
-    
-    private $emprunts;
-    
-    private $reservations;
-    
-    
-    
-	public function getIdProd(){
-		// TODO	
-	}
+public function getIdProd(){
+	// TODO	
+}
 	
     
-	public function setIdProd(){
-		// TODO	
-	}
+public function setIdProd(){
+	// TODO	
+}
 	
     
-	public function getNomProd(){
-		// TODO	
-	}
+public function getNomProd(){
+	// TODO	
+}
 	
     
-	public function setNomProd(){
-		// TODO	
-	}
+public function setNomProd(){
+	// TODO	
+}
 	
     
-	public function getAuteur(){
-		// TODO	
-	}
+public function getAuteur(){
+	// TODO	
+}
 	
     
-	public function setAuteur(){
-		// TODO	
-	}
+public function setAuteur(){
+	// TODO	
+}
 	
     
-	public function getEtat(){
-		// TODO	
-	}
+public function getEtat(){
+	// TODO	
+}
 	
     
-	public function setEtat(){
-		// TODO	
-	}
+public function setEtat(){
+	// TODO	
+}
 	
     
-	public function getCategorie(){
-		// TODO	
-	}
+public function getCategorie(){
+	// TODO	
+}
 	
     
-	public function setCategorie(){
-		// TODO	
-	}
+public function setCategorie(){
+	// TODO	
+}
 	
     
-	public function getEdition(){
-		// TODO	
-	}
+public function getEdition(){
+	// TODO	
+}
 	
     
-	public function setEdition(){
-		// TODO	
-	}
+public function setEdition(){
+	// TODO	
+}
 	
     
-	public function getDatePublic(){
-		// TODO	
-	}
+public function getDatePublic(){
+	// TODO	
+}
 	
     
-	public function setDatePublic(){
-		// TODO	
-	}
+public function setDatePublic(){
+	// TODO	
+}
 	
     
-	public function getQuantite(){
-		// TODO	
-	}
+public function getQuantite(){
+	// TODO	
+}
 	
     
-	public function setQuantite(){
-		// TODO	
-	}
+public function setQuantite(){
+	// TODO	
+}
 	
     
-	public function getNoteDocument(){
-		// TODO	
-	}
+public function getNoteDocument(){
+	// TODO	
+}
 	
     
-	public function setNoteDocument(){
-		// TODO	
-	}
+public function setNoteDocument(){
+	// TODO	
+}
 	
     
-	public function getDescription(){
-		// TODO	
-	}
+public function getDescription(){
+	// TODO	
+}
 	
     
-	public function setDescription(){
-		// TODO	
-	}
+public function setDescription(){
+	// TODO	
+}
 	
     
-	public function getEmprunts(){
-		// TODO	
-	}
+public function getEmprunts(){
+	// TODO	
+}
 	
     
-	public function getReservations(){
-		// TODO	
-	}
+public function getReservations(){
+	// TODO	
+}
 	
 }
 
@@ -278,44 +278,44 @@ class Produit {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Reservation {
-    private $idReservation;
+private $idReservation;
+
+private $idDocument;
+
+private $idAbonne;
+
+private $dateReservation;
+
     
-    private $idDocument;
     
-    private $idAbonne;
-    
-    private $dateReservation;
-    
-    
-    
-	public function getIdReservation(){
-		// TODO	
-	}
+public function getIdReservation(){
+	// TODO	
+}
 	
     
-	public function getIdDocument(){
-		// TODO	
-	}
+public function getIdDocument(){
+	// TODO	
+}
 	
     
-	public function getIdAbonne(){
-		// TODO	
-	}
+public function getIdAbonne(){
+	// TODO	
+}
 	
     
-	public function setIdAbonne($id){
-		// TODO	
-	}
+public function setIdAbonne($id){
+	// TODO	
+}
 	
     
-	public function getDateReservation(){
-		// TODO	
-	}
+public function getDateReservation(){
+	// TODO	
+}
 	
     
-	public function setDateReservation($date){
-		// TODO	
-	}
+public function setDateReservation($date){
+	// TODO	
+}
 	
 }
 
@@ -468,29 +468,29 @@ class Interaction {
 
 /* Généré avec GenMyModel à partir d'UML */
 class VueConnexion {
-    public $login;
+public $login;
+
+public $mdp;
+
+public $vueAccueil;
+
+public $ado;
+
     
-    public $mdp;
     
-    public $vueAccueil;
-    
-    public $ado;
-    
-    
-    
-	public function checkLogin(){
-		// TODO	
-	}
+public function checkLogin(){
+	// TODO	
+}
 	
     
-	public function checkMdp(){
-		// TODO	
-	}
+public function checkMdp(){
+	// TODO	
+}
 	
     
-	public function rentre id et mdp(){
-		// TODO	
-	}
+public function rentre id et mdp(){
+	// TODO	
+}
 	
 }
 
@@ -499,61 +499,61 @@ class VueConnexion {
 
 /* Généré avec GenMyModel à partir d'UML */
 class VueAccueil {
-    public $ado;
+public $ado;
+
+public $vueInscription;
+
+public $vueListeProduit;
+
+public $vueListeClient;
+
+public $vueListeSalarie;
+
     
-    public $vueInscription;
     
-    public $vueListeProduit;
-    
-    public $vueListeClient;
-    
-    public $vueListeSalarie;
-    
-    
-    
-	public function affiche_listeSalarie(){
-		// TODO	
-	}
+public function affiche_listeSalarie(){
+	// TODO	
+}
 	
     
-	public function affiche_ListeSalarié(){
-		// TODO	
-	}
+public function affiche_ListeSalarié(){
+	// TODO	
+}
 	
     
-	public function clique sur "Liste Produit"(){
-		// TODO	
-	}
+public function clique sur "Liste Produit"(){
+	// TODO	
+}
 	
     
-	public function affiche_MonCompte(){
-		// TODO	
-	}
+public function affiche_MonCompte(){
+	// TODO	
+}
 	
     
-	public function affiche_logActions(){
-		// TODO	
-	}
+public function affiche_logActions(){
+	// TODO	
+}
 	
     
-	public function rechercheProduit(){
-		// TODO	
-	}
+public function rechercheProduit(){
+	// TODO	
+}
 	
     
-	public function rechercheSalarie(){
-		// TODO	
-	}
+public function rechercheSalarie(){
+	// TODO	
+}
 	
     
-	public function affiche_Inscription(){
-		// TODO	
-	}
+public function affiche_Inscription(){
+	// TODO	
+}
 	
     
-	public function affiche_ListeClient(){
-		// TODO	
-	}
+public function affiche_ListeClient(){
+	// TODO	
+}
 	
 }
 
@@ -562,25 +562,25 @@ class VueAccueil {
 
 /* Généré avec GenMyModel à partir d'UML */
 class VueListeSalarie {
-    public $ado;
+public $ado;
+
+public $vueAccueil;
+
     
-    public $vueAccueil;
     
-    
-    
-	public function rechercheSalarie(){
-		// TODO	
-	}
+public function rechercheSalarie(){
+	// TODO	
+}
 	
     
-	public function affiche_infoSalarie($id){
-		// TODO	
-	}
+public function affiche_infoSalarie($id){
+	// TODO	
+}
 	
     
-	public function affiche_Accueil(){
-		// TODO	
-	}
+public function affiche_Accueil(){
+	// TODO	
+}
 	
 }
 
@@ -589,18 +589,18 @@ class VueListeSalarie {
 
 /* Généré avec GenMyModel à partir d'UML */
 class VueInformationSalarié {
-    public $vueListeSalarie;
+public $vueListeSalarie;
+
     
     
-    
-	public function supprimerSalarie(){
-		// TODO	
-	}
+public function supprimerSalarie(){
+	// TODO	
+}
 	
     
-	public function affiche_ListeSalarie(){
-		// TODO	
-	}
+public function affiche_ListeSalarie(){
+	// TODO	
+}
 	
 }
 
@@ -609,15 +609,15 @@ class VueInformationSalarié {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Connexion_ADO {
-    public $vue;
+public $vue;
+
+public $personneConnectee;
+
     
-    public $personneConnectee;
     
-    
-    
-	public function identification(){
-		// TODO	
-	}
+public function identification(){
+	// TODO	
+}
 	
 }
 
@@ -626,43 +626,43 @@ class Connexion_ADO {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Accueil_ADO {
-    public $vue;
+public $vue;
+
     
     
-    
-	public function affiche_ListeSalarie_ADO(){
-		// TODO	
-	}
+public function affiche_ListeSalarie_ADO(){
+	// TODO	
+}
 	
     
-	public function affiche_ListeClient_ADO(){
-		// TODO	
-	}
+public function affiche_ListeClient_ADO(){
+	// TODO	
+}
 	
     
-	public function affiche_ListeProduit(){
-		// TODO	
-	}
+public function affiche_ListeProduit(){
+	// TODO	
+}
 	
     
-	public function affiche_MonCompte_ADO(){
-		// TODO	
-	}
+public function affiche_MonCompte_ADO(){
+	// TODO	
+}
 	
     
-	public function rechercheProduit_ADO(){
-		// TODO	
-	}
+public function rechercheProduit_ADO(){
+	// TODO	
+}
 	
     
-	public function rechercheCompte_ADO(){
-		// TODO	
-	}
+public function rechercheCompte_ADO(){
+	// TODO	
+}
 	
     
-	public function affiche_Inscription_ADO(){
-		// TODO	
-	}
+public function affiche_Inscription_ADO(){
+	// TODO	
+}
 	
 }
 
@@ -671,22 +671,22 @@ class Accueil_ADO {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Liste_Salarié_ADO {
-    public $salaries;
+public $salaries;
+
+public $recherche;
+
+public $vue;
+
     
-    public $recherche;
     
-    public $vue;
-    
-    
-    
-	public function affiche_infoSalarie_ADO($id){
-		// TODO	
-	}
+public function affiche_infoSalarie_ADO($id){
+	// TODO	
+}
 	
     
-	public function recherche(){
-		// TODO	
-	}
+public function recherche(){
+	// TODO	
+}
 	
 }
 
@@ -695,20 +695,20 @@ class Liste_Salarié_ADO {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Info_Salarié_ADO {
-    public $vue;
+public $vue;
+
+public $salarie;
+
     
-    public $salarie;
     
-    
-    
-	public function supprimerSalarie_ADO(){
-		// TODO	
-	}
+public function supprimerSalarie_ADO(){
+	// TODO	
+}
 	
     
-	public function affiche_ListeSalarie_ADO(){
-		// TODO	
-	}
+public function affiche_ListeSalarie_ADO(){
+	// TODO	
+}
 	
 }
 
@@ -717,40 +717,40 @@ class Info_Salarié_ADO {
 
 /* Généré avec GenMyModel à partir d'UML */
 class VueListeClient {
-    public $ado;
+public $ado;
+
+public $vueAccueil;
+
     
-    public $vueAccueil;
     
-    
-    
-	public function affiche_NouveauxClient(){
-		// TODO	
-	}
+public function affiche_NouveauxClient(){
+	// TODO	
+}
 	
     
-	public function affiche_Accueil(){
-		// TODO	
-	}
+public function affiche_Accueil(){
+	// TODO	
+}
 	
     
-	public function ajouterClient(){
-		// TODO	
-	}
+public function ajouterClient(){
+	// TODO	
+}
 	
     
-	public function modifierClient(){
-		// TODO	
-	}
+public function modifierClient(){
+	// TODO	
+}
 	
     
-	public function supprimerClient(){
-		// TODO	
-	}
+public function supprimerClient(){
+	// TODO	
+}
 	
     
-	public function affiche_InfoClient($id){
-		// TODO	
-	}
+public function affiche_InfoClient($id){
+	// TODO	
+}
 	
 }
 
@@ -759,25 +759,25 @@ class VueListeClient {
 
 /* Généré avec GenMyModel à partir d'UML */
 class VueNouveauxClient {
-    public $ado;
+public $ado;
+
+public $vueListeClient;
+
     
-    public $vueListeClient;
     
-    
-    
-	public function affiche_ListeClient(){
-		// TODO	
-	}
+public function affiche_ListeClient(){
+	// TODO	
+}
 	
     
-	public function valider_client(){
-		// TODO	
-	}
+public function valider_client(){
+	// TODO	
+}
 	
     
-	public function affiche_InfoClient($id){
-		// TODO	
-	}
+public function affiche_InfoClient($id){
+	// TODO	
+}
 	
 }
 
@@ -786,47 +786,47 @@ class VueNouveauxClient {
 
 /* Généré avec GenMyModel à partir d'UML */
 class VueListeProduit {
-    public $ado;
+public $ado;
+
+public $vueInfoProduit;
+
+public $vueAccueil;
+
     
-    public $vueInfoProduit;
     
-    public $vueAccueil;
-    
-    
-    
-	public function affiche_Info_Produit($id){
-		// TODO	
-	}
+public function affiche_Info_Produit($id){
+	// TODO	
+}
 	
     
-	public function affiche_Accueil(){
-		// TODO	
-	}
+public function affiche_Accueil(){
+	// TODO	
+}
 	
     
-	public function ajouterProduit($produit){
-		// TODO	
-	}
+public function ajouterProduit($produit){
+	// TODO	
+}
 	
     
-	public function supprimerProduit($id){
-		// TODO	
-	}
+public function supprimerProduit($id){
+	// TODO	
+}
 	
     
-	public function modifierProduit(){
-		// TODO	
-	}
+public function modifierProduit(){
+	// TODO	
+}
 	
     
-	public function emprunterProduit($id){
-		// TODO	
-	}
+public function emprunterProduit($id){
+	// TODO	
+}
 	
     
-	public function prolongerEmprunt($id){
-		// TODO	
-	}
+public function prolongerEmprunt($id){
+	// TODO	
+}
 	
 }
 
@@ -835,35 +835,35 @@ class VueListeProduit {
 
 /* Généré avec GenMyModel à partir d'UML */
 class VueInfoProduit {
-    public $ado;
+public $ado;
+
+public $vueListeProduit;
+
     
-    public $vueListeProduit;
     
-    
-    
-	public function affiche_ListeProduit(){
-		// TODO	
-	}
+public function affiche_ListeProduit(){
+	// TODO	
+}
 	
     
-	public function supprimerProduit(){
-		// TODO	
-	}
+public function supprimerProduit(){
+	// TODO	
+}
 	
     
-	public function modifierProduit(){
-		// TODO	
-	}
+public function modifierProduit(){
+	// TODO	
+}
 	
     
-	public function emprunterProduit(){
-		// TODO	
-	}
+public function emprunterProduit(){
+	// TODO	
+}
 	
     
-	public function ajouterProduit(){
-		// TODO	
-	}
+public function ajouterProduit(){
+	// TODO	
+}
 	
 }
 
@@ -872,15 +872,15 @@ class VueInfoProduit {
 
 /* Généré avec GenMyModel à partir d'UML */
 class VueMonCompte {
-    public $ado;
+public $ado;
+
+public $vueAcceil;
+
     
-    public $vueAcceil;
     
-    
-    
-	public function affiche_Accueil(){
-		// TODO	
-	}
+public function affiche_Accueil(){
+	// TODO	
+}
 	
 }
 
@@ -889,37 +889,37 @@ class VueMonCompte {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Liste_Client_ADO {
-    public $affiche_NouveauClient_ADO;
+public $affiche_NouveauClient_ADO;
+
+public $vue;
+
+public $clients;
+
     
-    public $vue;
     
-    public $clients;
-    
-    
-    
-	public function ajouterClient_ADO(){
-		// TODO	
-	}
+public function ajouterClient_ADO(){
+	// TODO	
+}
 	
     
-	public function supprimerClient_ADO(){
-		// TODO	
-	}
+public function supprimerClient_ADO(){
+	// TODO	
+}
 	
     
-	public function modifierClient_ADO(){
-		// TODO	
-	}
+public function modifierClient_ADO(){
+	// TODO	
+}
 	
     
-	public function affiche_InfoClient_ADO(){
-		// TODO	
-	}
+public function affiche_InfoClient_ADO(){
+	// TODO	
+}
 	
     
-	public function affiche_Accueil_ADO(){
-		// TODO	
-	}
+public function affiche_Accueil_ADO(){
+	// TODO	
+}
 	
 }
 
@@ -928,20 +928,20 @@ class Liste_Client_ADO {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Nouveaux_Clients_ADO {
-    public $vue;
+public $vue;
+
+public $clients;
+
     
-    public $clients;
     
-    
-    
-	public function valider_Compte_ADO(){
-		// TODO	
-	}
+public function valider_Compte_ADO(){
+	// TODO	
+}
 	
     
-	public function affiche_InfoClient_ADO(){
-		// TODO	
-	}
+public function affiche_InfoClient_ADO(){
+	// TODO	
+}
 	
 }
 
@@ -950,45 +950,45 @@ class Nouveaux_Clients_ADO {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Liste_Produit_ADO {
-    public $vue;
+public $vue;
+
+public $produits;
+
     
-    public $produits;
     
-    
-    
-	public function affiche_InfoProduit_ADO(){
-		// TODO	
-	}
+public function affiche_InfoProduit_ADO(){
+	// TODO	
+}
 	
     
-	public function ajouterProduit_ADO($produit){
-		// TODO	
-	}
+public function ajouterProduit_ADO($produit){
+	// TODO	
+}
 	
     
-	public function affiche_Accueil_ADO(){
-		// TODO	
-	}
+public function affiche_Accueil_ADO(){
+	// TODO	
+}
 	
     
-	public function modifierProduit_ADO(){
-		// TODO	
-	}
+public function modifierProduit_ADO(){
+	// TODO	
+}
 	
     
-	public function supprimerProduit($id){
-		// TODO	
-	}
+public function supprimerProduit($id){
+	// TODO	
+}
 	
     
-	public function emprunterProduit($id){
-		// TODO	
-	}
+public function emprunterProduit($id){
+	// TODO	
+}
 	
     
-	public function prolongerEmprunt_ADO($id){
-		// TODO	
-	}
+public function prolongerEmprunt_ADO($id){
+	// TODO	
+}
 	
 }
 
@@ -997,35 +997,35 @@ class Liste_Produit_ADO {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Info_Produit_ADO {
-    public $vue;
+public $vue;
+
+public $produit;
+
     
-    public $produit;
     
-    
-    
-	public function modifierProduit_ADO(){
-		// TODO	
-	}
+public function modifierProduit_ADO(){
+	// TODO	
+}
 	
     
-	public function supprimerProduit_ADO(){
-		// TODO	
-	}
+public function supprimerProduit_ADO(){
+	// TODO	
+}
 	
     
-	public function emprunterProduit_ADO($idClient){
-		// TODO	
-	}
+public function emprunterProduit_ADO($idClient){
+	// TODO	
+}
 	
     
-	public function ajouterProduit_ADO(){
-		// TODO	
-	}
+public function ajouterProduit_ADO(){
+	// TODO	
+}
 	
     
-	public function prolongerEmprunt_ADO(){
-		// TODO	
-	}
+public function prolongerEmprunt_ADO(){
+	// TODO	
+}
 	
 }
 
@@ -1034,15 +1034,15 @@ class Info_Produit_ADO {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Mon_Compte_ADO {
-    public $vue;
+public $vue;
+
+public $client;
+
     
-    public $client;
     
-    
-    
-	public function affiche_Accueil_ADO(){
-		// TODO	
-	}
+public function affiche_Accueil_ADO(){
+	// TODO	
+}
 	
 }
 
@@ -1051,15 +1051,15 @@ class Mon_Compte_ADO {
 
 /* Généré avec GenMyModel à partir d'UML */
 class VueInformationClient {
-    public $ado;
+public $ado;
+
+public $vueListeClient;
+
     
-    public $vueListeClient;
     
-    
-    
-	public function affiche_ListeClient(){
-		// TODO	
-	}
+public function affiche_ListeClient(){
+	// TODO	
+}
 	
 }
 
@@ -1068,15 +1068,15 @@ class VueInformationClient {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Info_Client_ADO {
-    public $vue;
+public $vue;
+
+public $client;
+
     
-    public $client;
     
-    
-    
-	public function affiche_ListeCompte_ADO(){
-		// TODO	
-	}
+public function affiche_ListeCompte_ADO(){
+	// TODO	
+}
 	
 }
 
@@ -1141,25 +1141,25 @@ class Interaction {
 
 /* Généré avec GenMyModel à partir d'UML */
 class VueLogActions {
-    public $ado;
+public $ado;
+
+public $vueAccueil;
+
     
-    public $vueAccueil;
     
-    
-    
-	public function affiche_Accueil(){
-		// TODO	
-	}
+public function affiche_Accueil(){
+	// TODO	
+}
 	
     
-	public function valider_action($id){
-		// TODO	
-	}
+public function valider_action($id){
+	// TODO	
+}
 	
     
-	public function annuler_action($id){
-		// TODO	
-	}
+public function annuler_action($id){
+	// TODO	
+}
 	
 }
 
@@ -1168,20 +1168,20 @@ class VueLogActions {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Action_ADO {
-    public $vue;
+public $vue;
+
+public $acteur;
+
     
-    public $acteur;
     
-    
-    
-	public function valider_action_ADO(){
-		// TODO	
-	}
+public function valider_action_ADO(){
+	// TODO	
+}
 	
     
-	public function annuler_action_ADO(){
-		// TODO	
-	}
+public function annuler_action_ADO(){
+	// TODO	
+}
 	
 }
 
@@ -1190,44 +1190,44 @@ class Action_ADO {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Action {
-    public $id;
+public $id;
+
+public $descriptionGeneree;
+
+public $validee;
+
+public $sqlPourAnnulerAction;
+
     
-    public $descriptionGeneree;
     
-    public $validee;
-    
-    public $sqlPourAnnulerAction;
-    
-    
-    
-	public function getId(){
-		// TODO	
-	}
+public function getId(){
+	// TODO	
+}
 	
     
-	public function getDescription(){
-		// TODO	
-	}
+public function getDescription(){
+	// TODO	
+}
 	
     
-	public function setDescription($description){
-		// TODO	
-	}
+public function setDescription($description){
+	// TODO	
+}
 	
     
-	public function valider($validation){
-		// TODO	
-	}
+public function valider($validation){
+	// TODO	
+}
 	
     
-	public function getSql(){
-		// TODO	
-	}
+public function getSql(){
+	// TODO	
+}
 	
     
-	public function setSql($sql){
-		// TODO	
-	}
+public function setSql($sql){
+	// TODO	
+}
 	
 }
 
@@ -1252,61 +1252,61 @@ class Interaction {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Personne {
-    private $id;
+private $id;
+
+private $email;
+
+private $prenom;
+
+private $nom;
+
+private $mdp;
+
     
-    private $email;
     
-    private $prenom;
-    
-    private $nom;
-    
-    private $mdp;
-    
-    
-    
-	public function getId(){
-		// TODO	
-	}
+public function getId(){
+	// TODO	
+}
 	
     
-	public function getEmail(){
-		// TODO	
-	}
+public function getEmail(){
+	// TODO	
+}
 	
     
-	public function setEmail($login){
-		// TODO	
-	}
+public function setEmail($login){
+	// TODO	
+}
 	
     
-	public function getNom(){
-		// TODO	
-	}
+public function getNom(){
+	// TODO	
+}
 	
     
-	public function setNom($nom){
-		// TODO	
-	}
+public function setNom($nom){
+	// TODO	
+}
 	
     
-	public function getMdp(){
-		// TODO	
-	}
+public function getMdp(){
+	// TODO	
+}
 	
     
-	public function setMdp($mdp){
-		// TODO	
-	}
+public function setMdp($mdp){
+	// TODO	
+}
 	
     
-	public function getPrenom(){
-		// TODO	
-	}
+public function getPrenom(){
+	// TODO	
+}
 	
     
-	public function setPrenom($nom){
-		// TODO	
-	}
+public function setPrenom($nom){
+	// TODO	
+}
 	
 }
 
@@ -1315,20 +1315,20 @@ class Personne {
 
 /* Généré avec GenMyModel à partir d'UML */
 class VueInscription {
-    public $ado;
+public $ado;
+
+public $vueAcceuil;
+
     
-    public $vueAcceuil;
     
-    
-    
-	public function affiche_Accueil(){
-		// TODO	
-	}
+public function affiche_Accueil(){
+	// TODO	
+}
 	
     
-	public function inscription(){
-		// TODO	
-	}
+public function inscription(){
+	// TODO	
+}
 	
 }
 
@@ -1337,20 +1337,20 @@ class VueInscription {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Inscription_ADO {
-    public $vue;
+public $vue;
+
+public $client;
+
     
-    public $client;
     
-    
-    
-	public function affiche_Accueil_ADO(){
-		// TODO	
-	}
+public function affiche_Accueil_ADO(){
+	// TODO	
+}
 	
     
-	public function inscription_ADO(){
-		// TODO	
-	}
+public function inscription_ADO(){
+	// TODO	
+}
 	
 }
 
@@ -1383,13 +1383,13 @@ class Interaction {
 
 /* Généré avec GenMyModel à partir d'UML */
 class Recherche {
-    public $temes;
-    
-    public $dateMinimum;
-    
-    public $dateMaximum;
-    
-    public $saisieChampsRecherche[];
-    
+public $temes;
+
+public $dateMinimum;
+
+public $dateMaximum;
+
+public $saisieChampsRecherche[];
+
     
 }
