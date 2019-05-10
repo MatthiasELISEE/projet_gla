@@ -12,9 +12,3 @@ class Recherche {
     
     
 }
-
-
-<?php
-
-/* Generated from GenMyModel */
-
