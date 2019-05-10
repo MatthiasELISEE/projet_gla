@@ -323,150 +323,6 @@ class Reservation {
 
 
 /* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class StateMachine {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
 class VueConnexion {
     public $login;
     
@@ -1084,62 +940,6 @@ class Info_Client_ADO {
 
 
 /* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
 class VueLogActions {
     public $ado;
     
@@ -1229,22 +1029,6 @@ class Action {
     	// TODO	
     }
 	
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
 }
 
 
@@ -1352,30 +1136,6 @@ class Inscription_ADO {
     	// TODO	
     }
 	
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
-}
-
-
-
-
-/* Généré avec GenMyModel à partir d'UML */
-class Interaction {
-    
 }
 
 
