@@ -12,12 +12,12 @@ class Salarie {
     
     
     
-    public function getDroitManager(){
+    function getDroitManager(){
     	// TODO	
     }
 	
     
-    public function setDroitManager($manager){
+    function setDroitManager($manager){
     	// TODO	
     }
 	
@@ -40,32 +40,32 @@ class Client {
     
     
     
-    public function getAdresseClient(){
+    function getAdresseClient(){
     	// TODO	
     }
 	
     
-    public function setAdresseClient($adresse){
+    function setAdresseClient($adresse){
     	// TODO	
     }
 	
     
-    public function getCompteValide(){
+    function getCompteValide(){
     	// TODO	
     }
 	
     
-    public function setCompteValide($validation){
+    function setCompteValide($validation){
     	// TODO	
     }
 	
     
-    public function getSoldeClient(){
+    function getSoldeClient(){
     	// TODO	
     }
 	
     
-    public function setSoldeClient(){
+    function setSoldeClient(){
     	// TODO	
     }
 	
@@ -90,42 +90,42 @@ class Emprunt {
     
     
     
-    public function getIdEmprunt(){
+    function getIdEmprunt(){
     	// TODO	
     }
 	
     
-    public function getIdClient(){
+    function getIdClient(){
     	// TODO	
     }
 	
     
-    public function getIdDocument(){
+    function getIdDocument(){
     	// TODO	
     }
 	
     
-    public function setIdDocument(){
+    function setIdDocument(){
     	// TODO	
     }
 	
     
-    public function getDate_emprunt(){
+    function getDate_emprunt(){
     	// TODO	
     }
 	
     
-    public function setDate_emprunt(){
+    function setDate_emprunt(){
     	// TODO	
     }
 	
     
-    public function getDate_retour(){
+    function getDate_retour(){
     	// TODO	
     }
 	
     
-    public function setDate_retour(){
+    function setDate_retour(){
     	// TODO	
     }
 	
@@ -162,112 +162,112 @@ class Produit {
     
     
     
-    public function getIdProd(){
+    function getIdProd(){
     	// TODO	
     }
 	
     
-    public function setIdProd(){
+    function setIdProd(){
     	// TODO	
     }
 	
     
-    public function getNomProd(){
+    function getNomProd(){
     	// TODO	
     }
 	
     
-    public function setNomProd(){
+    function setNomProd(){
     	// TODO	
     }
 	
     
-    public function getAuteur(){
+    function getAuteur(){
     	// TODO	
     }
 	
     
-    public function setAuteur(){
+    function setAuteur(){
     	// TODO	
     }
 	
     
-    public function getEtat(){
+    function getEtat(){
     	// TODO	
     }
 	
     
-    public function setEtat(){
+    function setEtat(){
     	// TODO	
     }
 	
     
-    public function getCategorie(){
+    function getCategorie(){
     	// TODO	
     }
 	
     
-    public function setCategorie(){
+    function setCategorie(){
     	// TODO	
     }
 	
     
-    public function getEdition(){
+    function getEdition(){
     	// TODO	
     }
 	
     
-    public function setEdition(){
+    function setEdition(){
     	// TODO	
     }
 	
     
-    public function getDatePublic(){
+    function getDatePublic(){
     	// TODO	
     }
 	
     
-    public function setDatePublic(){
+    function setDatePublic(){
     	// TODO	
     }
 	
     
-    public function getQuantite(){
+    function getQuantite(){
     	// TODO	
     }
 	
     
-    public function setQuantite(){
+    function setQuantite(){
     	// TODO	
     }
 	
     
-    public function getNoteDocument(){
+    function getNoteDocument(){
     	// TODO	
     }
 	
     
-    public function setNoteDocument(){
+    function setNoteDocument(){
     	// TODO	
     }
 	
     
-    public function getDescription(){
+    function getDescription(){
     	// TODO	
     }
 	
     
-    public function setDescription(){
+    function setDescription(){
     	// TODO	
     }
 	
     
-    public function getEmprunts(){
+    function getEmprunts(){
     	// TODO	
     }
 	
     
-    public function getReservations(){
+    function getReservations(){
     	// TODO	
     }
 	
@@ -288,32 +288,32 @@ class Reservation {
     
     
     
-    public function getIdReservation(){
+    function getIdReservation(){
     	// TODO	
     }
 	
     
-    public function getIdDocument(){
+    function getIdDocument(){
     	// TODO	
     }
 	
     
-    public function getIdAbonne(){
+    function getIdAbonne(){
     	// TODO	
     }
 	
     
-    public function setIdAbonne($id){
+    function setIdAbonne($id){
     	// TODO	
     }
 	
     
-    public function getDateReservation(){
+    function getDateReservation(){
     	// TODO	
     }
 	
     
-    public function setDateReservation($date){
+    function setDateReservation($date){
     	// TODO	
     }
 	
@@ -478,17 +478,17 @@ class VueConnexion {
     
     
     
-    public function checkLogin(){
+    function checkLogin(){
     	// TODO	
     }
 	
     
-    public function checkMdp(){
+    function checkMdp(){
     	// TODO	
     }
 	
     
-    public function rentre id et mdp(){
+    function rentre id et mdp(){
     	// TODO	
     }
 	
@@ -511,47 +511,47 @@ class VueAccueil {
     
     
     
-    public function affiche_listeSalarie(){
+    function affiche_listeSalarie(){
     	// TODO	
     }
 	
     
-    public function affiche_ListeSalarié(){
+    function affiche_ListeSalarié(){
     	// TODO	
     }
 	
     
-    public function clique sur "Liste Produit"(){
+    function clique sur "Liste Produit"(){
     	// TODO	
     }
 	
     
-    public function affiche_MonCompte(){
+    function affiche_MonCompte(){
     	// TODO	
     }
 	
     
-    public function affiche_logActions(){
+    function affiche_logActions(){
     	// TODO	
     }
 	
     
-    public function rechercheProduit(){
+    function rechercheProduit(){
     	// TODO	
     }
 	
     
-    public function rechercheSalarie(){
+    function rechercheSalarie(){
     	// TODO	
     }
 	
     
-    public function affiche_Inscription(){
+    function affiche_Inscription(){
     	// TODO	
     }
 	
     
-    public function affiche_ListeClient(){
+    function affiche_ListeClient(){
     	// TODO	
     }
 	
@@ -568,17 +568,17 @@ class VueListeSalarie {
     
     
     
-    public function rechercheSalarie(){
+    function rechercheSalarie(){
     	// TODO	
     }
 	
     
-    public function affiche_infoSalarie($id){
+    function affiche_infoSalarie($id){
     	// TODO	
     }
 	
     
-    public function affiche_Accueil(){
+    function affiche_Accueil(){
     	// TODO	
     }
 	
@@ -593,12 +593,12 @@ class VueInformationSalarié {
     
     
     
-    public function supprimerSalarie(){
+    function supprimerSalarie(){
     	// TODO	
     }
 	
     
-    public function affiche_ListeSalarie(){
+    function affiche_ListeSalarie(){
     	// TODO	
     }
 	
@@ -615,7 +615,7 @@ class Connexion_ADO {
     
     
     
-    public function identification(){
+    function identification(){
     	// TODO	
     }
 	
@@ -630,37 +630,37 @@ class Accueil_ADO {
     
     
     
-    public function affiche_ListeSalarie_ADO(){
+    function affiche_ListeSalarie_ADO(){
     	// TODO	
     }
 	
     
-    public function affiche_ListeClient_ADO(){
+    function affiche_ListeClient_ADO(){
     	// TODO	
     }
 	
     
-    public function affiche_ListeProduit(){
+    function affiche_ListeProduit(){
     	// TODO	
     }
 	
     
-    public function affiche_MonCompte_ADO(){
+    function affiche_MonCompte_ADO(){
     	// TODO	
     }
 	
     
-    public function rechercheProduit_ADO(){
+    function rechercheProduit_ADO(){
     	// TODO	
     }
 	
     
-    public function rechercheCompte_ADO(){
+    function rechercheCompte_ADO(){
     	// TODO	
     }
 	
     
-    public function affiche_Inscription_ADO(){
+    function affiche_Inscription_ADO(){
     	// TODO	
     }
 	
@@ -679,12 +679,12 @@ class Liste_Salarié_ADO {
     
     
     
-    public function affiche_infoSalarie_ADO($id){
+    function affiche_infoSalarie_ADO($id){
     	// TODO	
     }
 	
     
-    public function recherche(){
+    function recherche(){
     	// TODO	
     }
 	
@@ -701,12 +701,12 @@ class Info_Salarié_ADO {
     
     
     
-    public function supprimerSalarie_ADO(){
+    function supprimerSalarie_ADO(){
     	// TODO	
     }
 	
     
-    public function affiche_ListeSalarie_ADO(){
+    function affiche_ListeSalarie_ADO(){
     	// TODO	
     }
 	
@@ -723,32 +723,32 @@ class VueListeClient {
     
     
     
-    public function affiche_NouveauxClient(){
+    function affiche_NouveauxClient(){
     	// TODO	
     }
 	
     
-    public function affiche_Accueil(){
+    function affiche_Accueil(){
     	// TODO	
     }
 	
     
-    public function ajouterClient(){
+    function ajouterClient(){
     	// TODO	
     }
 	
     
-    public function modifierClient(){
+    function modifierClient(){
     	// TODO	
     }
 	
     
-    public function supprimerClient(){
+    function supprimerClient(){
     	// TODO	
     }
 	
     
-    public function affiche_InfoClient($id){
+    function affiche_InfoClient($id){
     	// TODO	
     }
 	
@@ -765,17 +765,17 @@ class VueNouveauxClient {
     
     
     
-    public function affiche_ListeClient(){
+    function affiche_ListeClient(){
     	// TODO	
     }
 	
     
-    public function valider_client(){
+    function valider_client(){
     	// TODO	
     }
 	
     
-    public function affiche_InfoClient($id){
+    function affiche_InfoClient($id){
     	// TODO	
     }
 	
@@ -794,37 +794,37 @@ class VueListeProduit {
     
     
     
-    public function affiche_Info_Produit($id){
+    function affiche_Info_Produit($id){
     	// TODO	
     }
 	
     
-    public function affiche_Accueil(){
+    function affiche_Accueil(){
     	// TODO	
     }
 	
     
-    public function ajouterProduit($produit){
+    function ajouterProduit($produit){
     	// TODO	
     }
 	
     
-    public function supprimerProduit($id){
+    function supprimerProduit($id){
     	// TODO	
     }
 	
     
-    public function modifierProduit(){
+    function modifierProduit(){
     	// TODO	
     }
 	
     
-    public function emprunterProduit($id){
+    function emprunterProduit($id){
     	// TODO	
     }
 	
     
-    public function prolongerEmprunt($id){
+    function prolongerEmprunt($id){
     	// TODO	
     }
 	
@@ -841,27 +841,27 @@ class VueInfoProduit {
     
     
     
-    public function affiche_ListeProduit(){
+    function affiche_ListeProduit(){
     	// TODO	
     }
 	
     
-    public function supprimerProduit(){
+    function supprimerProduit(){
     	// TODO	
     }
 	
     
-    public function modifierProduit(){
+    function modifierProduit(){
     	// TODO	
     }
 	
     
-    public function emprunterProduit(){
+    function emprunterProduit(){
     	// TODO	
     }
 	
     
-    public function ajouterProduit(){
+    function ajouterProduit(){
     	// TODO	
     }
 	
@@ -878,7 +878,7 @@ class VueMonCompte {
     
     
     
-    public function affiche_Accueil(){
+    function affiche_Accueil(){
     	// TODO	
     }
 	
@@ -897,27 +897,27 @@ class Liste_Client_ADO {
     
     
     
-    public function ajouterClient_ADO(){
+    function ajouterClient_ADO(){
     	// TODO	
     }
 	
     
-    public function supprimerClient_ADO(){
+    function supprimerClient_ADO(){
     	// TODO	
     }
 	
     
-    public function modifierClient_ADO(){
+    function modifierClient_ADO(){
     	// TODO	
     }
 	
     
-    public function affiche_InfoClient_ADO(){
+    function affiche_InfoClient_ADO(){
     	// TODO	
     }
 	
     
-    public function affiche_Accueil_ADO(){
+    function affiche_Accueil_ADO(){
     	// TODO	
     }
 	
@@ -934,12 +934,12 @@ class Nouveaux_Clients_ADO {
     
     
     
-    public function valider_Compte_ADO(){
+    function valider_Compte_ADO(){
     	// TODO	
     }
 	
     
-    public function affiche_InfoClient_ADO(){
+    function affiche_InfoClient_ADO(){
     	// TODO	
     }
 	
@@ -956,37 +956,37 @@ class Liste_Produit_ADO {
     
     
     
-    public function affiche_InfoProduit_ADO(){
+    function affiche_InfoProduit_ADO(){
     	// TODO	
     }
 	
     
-    public function ajouterProduit_ADO($produit){
+    function ajouterProduit_ADO($produit){
     	// TODO	
     }
 	
     
-    public function affiche_Accueil_ADO(){
+    function affiche_Accueil_ADO(){
     	// TODO	
     }
 	
     
-    public function modifierProduit_ADO(){
+    function modifierProduit_ADO(){
     	// TODO	
     }
 	
     
-    public function supprimerProduit($id){
+    function supprimerProduit($id){
     	// TODO	
     }
 	
     
-    public function emprunterProduit($id){
+    function emprunterProduit($id){
     	// TODO	
     }
 	
     
-    public function prolongerEmprunt_ADO($id){
+    function prolongerEmprunt_ADO($id){
     	// TODO	
     }
 	
@@ -1003,27 +1003,27 @@ class Info_Produit_ADO {
     
     
     
-    public function modifierProduit_ADO(){
+    function modifierProduit_ADO(){
     	// TODO	
     }
 	
     
-    public function supprimerProduit_ADO(){
+    function supprimerProduit_ADO(){
     	// TODO	
     }
 	
     
-    public function emprunterProduit_ADO($idClient){
+    function emprunterProduit_ADO($idClient){
     	// TODO	
     }
 	
     
-    public function ajouterProduit_ADO(){
+    function ajouterProduit_ADO(){
     	// TODO	
     }
 	
     
-    public function prolongerEmprunt_ADO(){
+    function prolongerEmprunt_ADO(){
     	// TODO	
     }
 	
@@ -1040,7 +1040,7 @@ class Mon_Compte_ADO {
     
     
     
-    public function affiche_Accueil_ADO(){
+    function affiche_Accueil_ADO(){
     	// TODO	
     }
 	
@@ -1057,7 +1057,7 @@ class VueInformationClient {
     
     
     
-    public function affiche_ListeClient(){
+    function affiche_ListeClient(){
     	// TODO	
     }
 	
@@ -1074,7 +1074,7 @@ class Info_Client_ADO {
     
     
     
-    public function affiche_ListeCompte_ADO(){
+    function affiche_ListeCompte_ADO(){
     	// TODO	
     }
 	
@@ -1147,17 +1147,17 @@ class VueLogActions {
     
     
     
-    public function affiche_Accueil(){
+    function affiche_Accueil(){
     	// TODO	
     }
 	
     
-    public function valider_action($id){
+    function valider_action($id){
     	// TODO	
     }
 	
     
-    public function annuler_action($id){
+    function annuler_action($id){
     	// TODO	
     }
 	
@@ -1174,12 +1174,12 @@ class Action_ADO {
     
     
     
-    public function valider_action_ADO(){
+    function valider_action_ADO(){
     	// TODO	
     }
 	
     
-    public function annuler_action_ADO(){
+    function annuler_action_ADO(){
     	// TODO	
     }
 	
@@ -1200,32 +1200,32 @@ class Action {
     
     
     
-    public function getId(){
+    function getId(){
     	// TODO	
     }
 	
     
-    public function getDescription(){
+    function getDescription(){
     	// TODO	
     }
 	
     
-    public function setDescription($description){
+    function setDescription($description){
     	// TODO	
     }
 	
     
-    public function valider($validation){
+    function valider($validation){
     	// TODO	
     }
 	
     
-    public function getSql(){
+    function getSql(){
     	// TODO	
     }
 	
     
-    public function setSql($sql){
+    function setSql($sql){
     	// TODO	
     }
 	
@@ -1264,47 +1264,47 @@ class Personne {
     
     
     
-    public function getId(){
+    function getId(){
     	// TODO	
     }
 	
     
-    public function getEmail(){
+    function getEmail(){
     	// TODO	
     }
 	
     
-    public function setEmail($login){
+    function setEmail($login){
     	// TODO	
     }
 	
     
-    public function getNom(){
+    function getNom(){
     	// TODO	
     }
 	
     
-    public function setNom($nom){
+    function setNom($nom){
     	// TODO	
     }
 	
     
-    public function getMdp(){
+    function getMdp(){
     	// TODO	
     }
 	
     
-    public function setMdp($mdp){
+    function setMdp($mdp){
     	// TODO	
     }
 	
     
-    public function getPrenom(){
+    function getPrenom(){
     	// TODO	
     }
 	
     
-    public function setPrenom($nom){
+    function setPrenom($nom){
     	// TODO	
     }
 	
@@ -1321,12 +1321,12 @@ class VueInscription {
     
     
     
-    public function affiche_Accueil(){
+    function affiche_Accueil(){
     	// TODO	
     }
 	
     
-    public function inscription(){
+    function inscription(){
     	// TODO	
     }
 	
@@ -1343,12 +1343,12 @@ class Inscription_ADO {
     
     
     
-    public function affiche_Accueil_ADO(){
+    function affiche_Accueil_ADO(){
     	// TODO	
     }
 	
     
-    public function inscription_ADO(){
+    function inscription_ADO(){
     	// TODO	
     }
 	
