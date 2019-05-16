@@ -11,8 +11,7 @@ class Personne {
 	private $mdp;
 	
 	function __construct($data) {
-		print_r($data);
-		$this->idPersonne = $data["idPersonne"];
+		$this->id = $data["idPersonne"];
 		$this->email = $data["email"];
 		$this->prenom = $data["prenom"];
 		$this->nom = $data["nom"];
@@ -69,22 +68,16 @@ class Info_Salarié_ADO {
 			die("Connection failed: " . $this->connection->connect_error);
 		}
 		
-		$result = $this->connection->query("SELECT * FROM db.personne WHERE idPersonne=$id");
-		if (!$result) {
-			print_r( $this->connection->error_list);
-			echo "Etes vous sur que ce salarié existe";
-		}
-		$this->salarie = new Personne($result->fetch_assoc());
+		$result = $this->connection->fetch_assoc();
+		$this->salarie = new Personne($result);
 	}
 	
 	function supprimerSalarie_ADO(){	
-		$result = $this->connection->query("DELETE FROM db.Personne WHERE id=".$this->salarie->getIdPersonne().";");
+		$result = $this->connection->query("DELETE FROM Salarie WHERE id=".$this->salarie->getIdPersonne().";");
 		if (!$result) {
-			print_r($this->connection->error_list);
 			echo "Echec de la suppression.";
 		}
 	}
-	
 	function affiche_ListeSalarie_ADO(){
 		// TODO	
 	}

@@ -11,7 +11,7 @@ class Personne {
 	private $mdp;
 	
 	function __construct($data) {
-		print_r($data);
+		echo print_r($data);
 		$this->idPersonne = $data["idPersonne"];
 		$this->email = $data["email"];
 		$this->prenom = $data["prenom"];
@@ -78,13 +78,13 @@ class Info_Salarié_ADO {
 	}
 	
 	function supprimerSalarie_ADO(){	
-		$result = $this->connection->query("DELETE FROM db.Personne WHERE id=".$this->salarie->getIdPersonne().";");
+		echo "DELETE FROM Salarie WHERE id=".$this->salarie->getIdPersonne().";";
+		$result = $this->connection->query("DELETE FROM db.Personne WHERE idPersonne=".$this->salarie->getIdPersonne().";");
 		if (!$result) {
 			print_r($this->connection->error_list);
 			echo "Echec de la suppression.";
 		}
 	}
-	
 	function affiche_ListeSalarie_ADO(){
 		// TODO	
 	}

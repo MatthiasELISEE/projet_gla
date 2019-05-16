@@ -84,7 +84,6 @@ class Info_Salarié_ADO {
 			echo "Echec de la suppression.";
 		}
 	}
-	
 	function affiche_ListeSalarie_ADO(){
 		// TODO	
 	}

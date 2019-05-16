@@ -1,0 +1,15 @@
+class Info_Salarié_ADO {
+    public $vue;
+    
+    public $salarie;
+    
+    function supprimerSalarie_ADO(){
+    	// TODO	
+    }
+	
+    
+    function affiche_ListeSalarie_ADO(){
+    	// TODO	
+    }
+	
+}

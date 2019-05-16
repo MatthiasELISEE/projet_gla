@@ -1,0 +1,76 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "battlefield";
+// Create connection
+class Personne {
+	private $id;
+	private $email;
+	private $prenom;
+	private $nom;
+	private $mdp;
+	
+	function __construct() {
+			
+	}
+	
+	function getId(){
+		return $this->id;
+	}
+	function getEmail(){
+		return $email;
+	}
+	function setEmail($login){
+		$this->email = $login;
+	}
+	function getNom(){
+		return $this->nom;
+	}
+	function setNom($nom){
+		$this->nom = $nom
+	}
+	function getMdp(){
+		return $this->mdp;
+	}
+	function setMdp($mdp){
+		$this->mdp = $mdp
+	}
+	function getPrenom(){
+		return $this->nom
+	}
+	function setPrenom($nom){
+		$this->prenom = $nom;  
+	}
+}
+
+class Salarie extends Personne {
+	private $estManager;
+	function getDroitManager(){
+		return $estManager;   
+	}
+	function setDroitManager($manager){
+		$estManager = $manager;
+	}
+}
+
+class Info_Salarié_ADO {
+	public $vue;
+	public $salarie;
+	public $connection;
+	
+	function __construct($id) {
+		$this->connection = new mysqli($servername, $username, $password);
+		
+	}
+	
+	function supprimerSalarie_ADO(){		$conn = new mysqli($servername, $username, $password);
+		if ($conn->connect_error()) {
+			die("Connection failed: " . $conn->connect_error);
+		}
+		
+		
+	}
+	function affiche_ListeSalarie_ADO(){
+		// TODO	
+	}
+}

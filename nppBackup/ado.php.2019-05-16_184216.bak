@@ -74,17 +74,18 @@ class Info_Salarié_ADO {
 			print_r( $this->connection->error_list);
 			echo "Etes vous sur que ce salarié existe";
 		}
+		print_r($result->fetch_array());
 		$this->salarie = new Personne($result->fetch_assoc());
 	}
 	
 	function supprimerSalarie_ADO(){	
+		echo "DELETE FROM db.Personne WHERE id=".$this->salarie->getIdPersonne().";";
 		$result = $this->connection->query("DELETE FROM db.Personne WHERE id=".$this->salarie->getIdPersonne().";");
 		if (!$result) {
 			print_r($this->connection->error_list);
 			echo "Echec de la suppression.";
 		}
 	}
-	
 	function affiche_ListeSalarie_ADO(){
 		// TODO	
 	}

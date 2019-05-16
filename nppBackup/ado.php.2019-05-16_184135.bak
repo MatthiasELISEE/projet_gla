@@ -78,13 +78,13 @@ class Info_Salarié_ADO {
 	}
 	
 	function supprimerSalarie_ADO(){	
+		echo "DELETE FROM db.Personne WHERE id=".$this->salarie->getIdPersonne().";";
 		$result = $this->connection->query("DELETE FROM db.Personne WHERE id=".$this->salarie->getIdPersonne().";");
 		if (!$result) {
 			print_r($this->connection->error_list);
 			echo "Echec de la suppression.";
 		}
 	}
-	
 	function affiche_ListeSalarie_ADO(){
 		// TODO	
 	}

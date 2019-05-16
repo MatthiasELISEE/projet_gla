@@ -69,7 +69,8 @@ class Info_Salarié_ADO {
 			die("Connection failed: " . $this->connection->connect_error);
 		}
 		
-		$result = $this->connection->query("SELECT * FROM db.personne WHERE idPersonne=$id");
+		$result = $this->connection->query("SELECT * FROM db.personne WHERE idPersonne=$id;");
+		echo "SELECT * FROM db.personne WHERE idPersonne=$id";
 		if (!$result) {
 			print_r( $this->connection->error_list);
 			echo "Etes vous sur que ce salarié existe";
@@ -78,13 +79,13 @@ class Info_Salarié_ADO {
 	}
 	
 	function supprimerSalarie_ADO(){	
+		echo "DELETE FROM db.Personne WHERE id=".$this->salarie->getIdPersonne().";";
 		$result = $this->connection->query("DELETE FROM db.Personne WHERE id=".$this->salarie->getIdPersonne().";");
 		if (!$result) {
 			print_r($this->connection->error_list);
 			echo "Echec de la suppression.";
 		}
 	}
-	
 	function affiche_ListeSalarie_ADO(){
 		// TODO	
 	}

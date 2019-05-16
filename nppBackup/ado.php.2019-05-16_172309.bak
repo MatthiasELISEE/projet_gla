@@ -1,0 +1,93 @@
+<?php
+
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+// Create connection
+class Personne {
+    private $id;
+    
+    private $email;
+    
+    private $prenom;
+    
+    private $nom;
+    
+    private $mdp;
+    
+    
+    
+    function getId(){
+    	// TODO	
+    }
+	
+    
+    function getEmail(){
+    	// TODO	
+    }
+	
+    
+    function setEmail($login){
+    	// TODO	
+    }
+	
+    
+    function getNom(){
+    	// TODO	
+    }
+	
+    
+    function setNom($nom){
+    	// TODO	
+    }
+	
+    
+    function getMdp(){
+    	// TODO	
+    }
+	
+    
+    function setMdp($mdp){
+    	// TODO	
+    }
+	
+    
+    function getPrenom(){
+    	// TODO	
+    }
+	
+    function setPrenom($nom){
+    	// TODO	
+    }
+	
+}
+
+class Salarie extends Personne {
+    private $estManager;
+    
+    function getDroitManager(){
+    	// TODO	
+    }
+	
+    
+    function setDroitManager($manager){
+    	// TODO	
+    }
+}
+
+class Info_Salarié_ADO {
+    public $vue;
+    
+    public $salarie;
+    
+    function supprimerSalarie_ADO(){
+		$conn = new mysqli($servername, $username, $password);
+    	
+    }
+    
+    function affiche_ListeSalarie_ADO(){
+    	// TODO	
+    }
+	
+}
