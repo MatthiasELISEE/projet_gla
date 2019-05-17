@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "main";
 $password = "main";
@@ -58,6 +59,12 @@ class Salarie extends Personne {
 	}
 }
 
+class Actions_ADO {
+	static function createAction($connection, $description, $sqlPourAnnuler) {
+		$connection->query("INSERT INTO db.Action (descriptionGeneree, sqlPourAnnulerAction) VALUES ('$description','$sqlPourAnnuler')");
+	}
+}
+
 class Info_Salarié_ADO {
 	public $vue;
 	public $salarie;
@@ -69,7 +76,7 @@ class Info_Salarié_ADO {
 			die("Connection failed: " . $this->connection->connect_error);
 		}
 		
-		$result = $this->connection->query("SELECT * FROM db.personne WHERE idPersonne=$id");
+		$result = $this->connection->query("SELECT * FROM dbPersonne WHERE idPersonne=$id");
 		if (!$result) {
 			print_r( $this->connection->error_list);
 			echo "Etes vous sur que ce salarié existe";
@@ -77,16 +84,26 @@ class Info_Salarié_ADO {
 		$this->salarie = new Personne($result->fetch_assoc());
 	}
 	
-	function supprimerSalarie_ADO(){	
-		$result = $this->connection->query("DELETE FROM db.Personne WHERE id=".$this->salarie->getIdPersonne().";");
+	function supprimerSalarie_ADO(){
+		$id = $this->salarie->getIdPersonne();
+		
+		$result = $this->connection->query("DELETE FROM db.Personne WHERE idPersonne=$id");
+		// Supprimer la personne supprime aussi dans la table salarie.
 		if (!$result) {
 			print_r($this->connection->error_list);
 			echo "Echec de la suppression.";
 		}
+		
+		// Création de l'action correspondante.
+		$nom = $this->salarie->getNom();
+		$description = "Suppression du salarie $nom. Cette action ne peut pas etre annulée.";
+		$sqlPourAnnuler = "";
+		
+		Actions_ADO::createAction($this->connection, $description, $sqlPourAnnuler);
 	}
 	
 	function affiche_ListeSalarie_ADO(){
-		// TODO	
+		// TODO
 	}
 }
 
