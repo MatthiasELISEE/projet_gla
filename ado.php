@@ -416,17 +416,187 @@ class Reservation {
 class Connexion_ADO {
     public $vue;
     public $personneConnectee;
+	$this->connection = new mysqli($GLOBALS["servername"], $GLOBALS["username"], $GLOBALS["password"]);
+		if ($this->connection->connect_error) {
+			die("Connection failed: " . $this->connection->connect_error);
+		}
     function identification($email,$mdp){
 	    $motDeP=$this->connection->query("SELECT Personne.mdp FROM db.Personne where Personne.email=$email");
 	    if ($mdp == $motDeP) {
 		    echo "Connection Réussie";
-		 //   return VueAccueil; faut dire que la personne accéde a l'accueil du site 
+		    return true;
+		   //return VueAccueil; faut dire que la personne accéde a l'accueil du site 
 	    }
 	    else {
 		    echo "Connexion échoué, merci de vérifier vous identifiants !";
+		    return false;
 		    // return VueConnexion ; renvoie la personne vers l'interface connexion pour qu'il réessaye.
 	    }
 		    
 	   	
     }
 }
+
+class Inscription_ADO {
+	public $vue;
+	public $client;
+	$this->connection = new mysqli($GLOBALS["servername"], $GLOBALS["username"], $GLOBALS["password"]);
+		if ($this->connection->connect_error) {
+			die("Connection failed: " . $this->connection->connect_error);
+		}
+	function inscription($email,$mdp,$nom,$prenom){
+		$result = $this->connection->query("INSERT INTO db.Client VALUES(seq_client.nextval,'$email','$prenom','$mdp')");
+			if (!$result) {
+			print_r($this->connection->error_list);
+			echo "Echec de l'inscription.";}
+		else{
+			echo "Compte crée";
+		//$req="INSERT INTO db.Client VALUES(seq_client.nextval,'$email','$prenom','$mdp')");
+		//mysql_query($req, $this->connection);
+		
+	}
+	//mysql_close($connexion);
+}
+}
+
+class Liste_Salarié_ADO {
+    public $salaries;
+    public $recherche;
+    public $vue;
+	
+	
+    $this->connection = new mysqli($GLOBALS["servername"], $GLOBALS["username"], $GLOBALS["password"]);
+		if ($this->connection->connect_error) {
+			die("Connection failed: " . $this->connection->connect_error);
+		}
+    function affiche_infoSalarie_ADO($id){
+    	$result = $this->connection->query("SELECT * FROM db.Personne WHERE id='$id'");
+			if (!$result) {
+			print_r($this->connection->error_list);
+			echo "Cette personne est introuvable.";}
+    }
+    function recherche(){
+    	// TODO	
+    }
+}
+
+class Mon_Compte_ADO {
+    public $vue;
+    public $client;
+	$id=this->Personne->getIdPersonne();
+	$this->connection = new mysqli($GLOBALS["servername"], $GLOBALS["username"], $GLOBALS["password"]);
+	if ($this->connection->connect_error) {
+			die("Connection failed: " . $this->connection->connect_error);
+		}
+    function affiche_Info_ADO($id){
+    	$result = $this->connection->query("SELECT * FROM db.Personne WHERE id='$id'");
+			if (!$result) {
+			print_r($this->connection->error_list);
+			echo "Personne introuvable.";}
+    }
+}
+
+}
+
+class Liste_Produit_ADO {
+    public $vue;
+    public $produits;
+	
+    $this->connection = new mysqli($GLOBALS["servername"], $GLOBALS["username"], $GLOBALS["password"]);
+	if ($this->connection->connect_error) {
+			die("Connection failed: " . $this->connection->connect_error);
+		
+    function affiche_InfoProduit_ADO($idP){
+    	$result = $this->connection->query("SELECT * FROM db.Produit WHERE idProduit='$idP'");
+		if (!$result) {
+		print_r($this->connection->error_list);
+		echo "Produit introuvable.";}
+    }
+    function ajouterProduit_ADO($nomProduit, $auteur, $etat, $categorie, $edition, $datePublic, $quantite, $noteProduit, $description){
+    	$result = $this->connection->query("INSERT INTO Produit VALUES (seq_produit.nextval,'$nomProduit', '$auteur', '$etat', '$categorie', '$edition', '$datePublic', '$quantite', '$noteProduit', '$description'");
+			if (!$result) {
+			print_r($this->connection->error_list);
+			echo "Erreur lors de l'ajout du produit.";}
+    }
+    function affiche_Accueil_ADO(){
+    	// TODO	
+    }
+    function modifierProduit_ADO($nomProduit, $auteur, $etat, $categorie, $edition, $datePublic, $quantite, $noteProduit, $description){
+    	$result = $this->connection->query("UPDATE Produit SET nomProduit='$nomProduit',auteur='$auteur', etat='$etat', categorie='$categorie',edition= '$edition', datePublic='$datePublic', quantite='$quantite', noteProduit='$noteProduit', description='$description'");
+			if (!$result) {
+			print_r($this->connection->error_list);
+			echo "Erreur lors la modification du produit.";}
+    }
+    function supprimerProduit($id){
+    	$result = $this->connection->query("DELETE FROM PRODUIT WHERE idProduit='$id'");
+			if (!$result) {
+			print_r($this->connection->error_list);
+			echo "Erreur lors de la suppression du produit.";}
+    }
+    function emprunterProduit($idProduit,$idClient,$date_emprunt,$date_retour){
+	    $result = $this->connection->query("INSERT INTO Emprunt VALUES (seq_emprunt.nextval,idClient='$idClient',
+    idProduit= '$idProduit',date_emprunt= '$date_emprunt',date_retour= '$date_retour';");
+			if (!$result) {
+			print_r($this->connection->error_list);
+			echo "Erreur lors de la suppression du produit.";}
+    		
+    }
+	}
+		
+    class Liste_Client_ADO {
+    public $affiche_NouveauClient_ADO;
+    public $vue;
+    public $clients;
+	    
+	  $this->connection = new mysqli($GLOBALS["servername"], $GLOBALS["username"], $GLOBALS["password"]);
+	if ($this->connection->connect_error) {
+			die("Connection failed: " . $this->connection->connect_error);
+
+	    
+    function ajouterClient_ADO(){$email, $mdp, $nom, $prenom){
+    	$result = $this->connection->query("INSERT INTO Client VALUES (seq_client.nextval,'$email', '$prenom', '$nom', '$mdp'");
+			if (!$result) {
+			print_r($this->connection->error_list);
+			echo "Erreur lors de l'ajout du client.";}
+    }
+    function supprimerClient_ADO($id){
+    	$result = $this->connection->query("DELETE FROM Client WHERE id='$id'");
+			if (!$result) {
+			print_r($this->connection->error_list);
+			echo "Erreur lors de la supression du client.";}
+    }
+    function modifierClient_ADO($email, $mdp, $nom, $prenom){
+    	$result = $this->connection->query("UPDATE Client SET email='$email', mdp='$mdp', nom='$nom', prenom='$prenom' WHERE Client WHERE email='$email'");
+			if (!$result) {
+			print_r($this->connection->error_list);
+			echo "Erreur lors de la modification d'un client.";}
+    }
+    function affiche_InfoClient_ADO($id){
+    	$result = $this->connection->query("SELECT * FROM Client WHERE id=$id");
+			if (!$result) {
+			print_r($this->connection->error_list);
+			echo "Client Introuvable";}
+    }
+    function affiche_Accueil_ADO(){
+    	// TODO	
+    }
+}
+		
+		
+class Nouveaux_Clients_ADO {
+    public $vue;
+    public $clients;
+	$this->connection = new mysqli($GLOBALS["servername"], $GLOBALS["username"], $GLOBALS["password"]);
+	if ($this->connection->connect_error) {
+			die("Connection failed: " . $this->connection->connect_error);
+
+    function valider_Compte_ADO($id){
+    	$result = $this->connection->query("UPDATE Client SET CompteValide=1 WHERE id='$id'");
+			if (!$result) {
+			print_r($this->connection->error_list);
+			echo "Erreur lors de la modification d'un client.";}
+    }
+    function affiche_InfoClient_ADO(){
+    	// TODO	
+    }
+
