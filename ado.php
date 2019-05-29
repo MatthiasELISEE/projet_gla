@@ -405,5 +405,20 @@ class Reservation {
     function setDateReservation($date){
     	$this->dateReservation = $date;
     }
+	
+	
   
 }
+
+class Inscription_ADO {
+    public $vue;
+    public $client;
+
+    function inscription($connection,$email,$mdp,$nom,$prenom){
+    	$req="INSERT INTO db.Client VALUES(seq_client.nextval,'$email','$prenom','$mdp')");
+	mysql_query($req, $connexion);
+	echo "Client crée avec succes";
+
+mysql_close($connexion);    
+	}
+ }
