@@ -149,7 +149,10 @@ class Produit {
 	}
 	
 	function setReservations($data) {
-		// TODO
+		$this->reservations = array();
+		foreach ($data as $row) {
+			array_push($this->reservations, new Reservation($row));
+		}
 	}
 	
     function getIdProduit(){
