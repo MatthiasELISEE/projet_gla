@@ -16,22 +16,22 @@
 			<div class="col-md-1"></div>
 		  	<article class="col-md-2">
 		  		<li class="nav-item">
-		  		  <a style="text-decoration:none" class="nav-link active" href="index_salarie.html"><div class="ecriture_menu_salarie">Accueil</div></a>
+		  		  <a style="text-decoration:none" class="nav-link active" href="index_salarie.php"><div class="ecriture_menu_salarie">Accueil</div></a>
 		  		</li>
 		  	</article>
 		  	<article class="col-md-2">
 		  		<li class="nav-item">
-		    	  <a style="text-decoration:none" class="nav-link" href="liste_produit_salarie.html"><div class="ecriture_menu_salarie">Produits</div></a>
+		    	  <a style="text-decoration:none" class="nav-link" href="liste_produit_salarie.php"><div class="ecriture_menu_salarie">Produits</div></a>
 		  		</li>
 		  	</article>
 		  	<article class="col-md-2">
 		  		<li class="nav-item">
-		  		  <a style="text-decoration:none" class="nav-link" href="liste_client_salarie.html"><div class="ecriture_menu_salarie">Clients</div></a>
+		  		  <a style="text-decoration:none" class="nav-link" href="liste_client_salarie.php"><div class="ecriture_menu_salarie">Clients</div></a>
 		  		</li>
 		  	</article>
 		  	<article class="col-md-2">
 		  		<li class="nav-item">
-		  		  <a style="text-decoration:none" class="nav-link" href="liste_salarie_salarie.html"><div class="ecriture_menu_salarie">Salariés</div></a>
+		  		  <a style="text-decoration:none" class="nav-link" href="liste_salarie_salarie.php"><div class="ecriture_menu_salarie">Salariés</div></a>
 		  		</li>
 		  	</article>
 		  	<article class="col-md-2">
@@ -45,7 +45,7 @@
 
 		<div class="container contenu_accueil">
 			
-			<a href="liste_produit_salarie.html" class="btn btn-primary btn_accueil" type="button"><img class="img_btn_accueil" src="../image/icon_recherche.png"></a>
+			<a href="liste_produit_salarie.php" class="btn btn-primary btn_accueil" type="button"><img class="img_btn_accueil" src="../image/icon_recherche.png"></a>
 
 		</div>
 

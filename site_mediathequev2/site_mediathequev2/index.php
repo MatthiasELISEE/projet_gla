@@ -15,17 +15,17 @@
 			<ul class="nav">
 		  	<article class="col-md-4">
 		  		<li class="nav-item">
-		  		  <a style="text-decoration:none" class="nav-link active" href="index.html"><div class="ecriture_menu">Accueil</div></a>
+		  		  <a style="text-decoration:none" class="nav-link active" href="index.php"><div class="ecriture_menu">Accueil</div></a>
 		  		</li>
 		  	</article>
 		  	<article class="col-md-4">
 		  		<li class="nav-item">
-		    	  <a style="text-decoration:none" class="nav-link" href="liste_produit.html"><div class="ecriture_menu">Produits</div></a>
+		    	  <a style="text-decoration:none" class="nav-link" href="liste_produit.php"><div class="ecriture_menu">Produits</div></a>
 		  		</li>
 		  	</article>
 		  	<article class="col-md-4">
 		  		<li class="nav-item">
-		  		  <a style="text-decoration:none" class="nav-link" href="identification.html"><div class="ecriture_menu">S'identifier</div></a>
+		  		  <a style="text-decoration:none" class="nav-link" href="identification.php"><div class="ecriture_menu">S'identifier</div></a>
 		  		</li>
 		  	</article>
 			</ul>
@@ -34,7 +34,7 @@
 
 		<div class="container contenu_accueil">
 			
-			<a href="liste_produit.html" class="btn btn-primary btn_accueil" type="button"><img class="img_btn_accueil" src="image/icon_recherche.png"></a>
+			<a href="liste_produit.php" class="btn btn-primary btn_accueil" type="button"><img class="img_btn_accueil" src="image/icon_recherche.png"></a>
 
 		</div>
 

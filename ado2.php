@@ -58,42 +58,10 @@ class Salarie extends Personne {
 	}
 	
 	function getDroitManager(){
-		return $this->estManager;   
+		return $estManager;   
 	}
 	function setDroitManager($manager){
-		$this->estManager = $manager;
-	}
-}
-
-class Client extends Personne {
-	private $adresseClient;
-	private $soldeClient;
-	private $compteValide;
-	
-	function __construct($data) {
-		parent::__construct($data);
-		$this->adresseClient = $data["adresseClient"];
-		$this->soldeClient = $data["soldeClient"];
-		$this->compteValide = $data["compteValide"];
-	}
-	
-	function getAdresse(){
-		return $this->adresseClient;   
-	}
-	function setAdresse($adresse){
-		$this->adresseClient= $adresse;
-	}
-	function getSolde() {
-		return $this->soldeClient;
-	}
-	function setSolde($solde) {
-		return $this->soldeClient;
-	}
-	function getCompteValide() {
-		return $this->compteValide;
-	}
-	function setCompteValide($validation) {
-		$this->compteValide = $validation;
+		$estManager = $manager;
 	}
 }
 
@@ -139,7 +107,7 @@ class Produit {
     private $edition;
     private $datePublic;
     private $quantite;
-    private $noteDocument;
+    private $noteProduit;
     private $description;
 	
     private $emprunts;
@@ -160,15 +128,30 @@ class Produit {
 		$this->datePublic = $data["datePublic"];
 		$this->quantite = $data["quantite"];
 		
-		if ($data["noteDocument"] == -1) {
-			$this->noteDocument = "Aucune note pour l'instant";
+		if ($data["noteProduit"] == -1) {
+			$this->noteProduit = "Aucune note pour l'instant";
 		} else {
-			$this->noteDocument = $data["noteDocument"];
+			$this->noteProduit = $data["noteProduit"];
 		}
 		if ($data["description"] === null) {
 			$this->description = "";
 		} else {
 			$this->description = $data["description"];
+		}
+	}
+	
+	// NOT TESTED FUNCTION
+	function setEmprunts($data) {
+		$this->emprunts = array();
+		foreach ($data as $row) {
+			array_push($this->emprunts, new Emprunt($row));
+		}
+	}
+	
+	function setReservations($data) {
+		$this->reservations = array();
+		foreach ($data as $row) {
+			array_push($this->reservations, new Reservation($row));
 		}
 	}
 	
@@ -215,10 +198,10 @@ class Produit {
     	$this->quantite = $quantite;
     }
     function getNoteProduit(){
-    	return $this->noteDocument;
+    	return $this->noteProduit;
     }
-    function setNoteProduit($noteDocument){
-    	$this->noteDocument = $noteDocument;
+    function setNoteProduit($noteProduit){
+    	$this->noteProduit = $noteProduit;
     }
     function getDescription(){
     	return $this->description;
@@ -227,26 +210,11 @@ class Produit {
     	$this->description = $description;
     }
 	
-	// NOT TESTED FUNCTION
-	function setEmprunts($data) {
-		$this->emprunts = array();
-		foreach ($data as $row) {
-			array_push($this->emprunts, new Emprunt($row));
-		}
-	}
-	
-	function setReservations($data) {
-		$this->reservations = array();
-		foreach ($data as $row) {
-			array_push($this->reservations, new Reservation($row));
-		}
-	}
-	
     function getEmprunts(){
-    	return $this->emprunts;	
+    	// TODO	
     }
     function getReservations(){
-		return $this->reservations;
+    	// TODO	
     }
 }
 
@@ -341,108 +309,6 @@ class Info_Salarié_ADO {
 	function affiche_ListeSalarie_ADO(){
 		// TODO
 	}
-}
-
-class Info_Produit_ADO {
-    public $vue;
-    public $produit;
-	
-	function __construct($id) {
-		$this->connection = new mysqli($GLOBALS["servername"], $GLOBALS["username"], $GLOBALS["password"]);
-		if ($this->connection->connect_error) {
-			die("Connection failed: " . $this->connection->connect_error);
-		}
-		
-		if (isset($id)) {
-			echo "SELECT * FROM db.Produit WHERE db.Produit.idProduit=$id";
-			$result = $this->connection->query("SELECT * FROM db.Produit WHERE db.Produit.idProduit=$id");
-			if (!$result or $result->num_rows == 0) {
-				print_r($this->connection->error_list);
-				die("Etes vous sur que ce produit existe");
-			}
-			
-			$this->produit = new Produit($result->fetch_assoc());
-			
-			echo "SELECT * FROM db.Emprunt WHERE Emprunt.idProduit=$id";
-			$result = $this->connection->query("SELECT * FROM db.Emprunt WHERE Emprunt.idProduit=$id");
-			if (!$result) {
-				print_r($this->connection->error_list);
-				die("Etes vous sur que ce produit existe");
-			}
-			
-			echo "SELECT * FROM db.Reservation WHERE Reservation.idProduit=$id";
-			$result = $this->connection->query("SELECT * FROM db.Reservation WHERE Reservation.idProduit=$id");
-			if (!$result) {
-				print_r($this->connection->error_list);
-				die("Etes vous sur que ce produit existe");
-			}
-			
-			$this->produit->setEmprunts($result->fetch_all());
-			$this->produit->setReservations($result->fetch_all());
-		}
-	}
-	
-    function modifierProduit_ADO($data){
-    	$id = $this->produit->getIdProduit();
-		print_r($data);
-		$result = $this->connection->query("UPDATE db.Produit
-		SET "
-		."nomProduit='".$data["nomProduit"]
-		."', auteur='".$data["auteur"]
-		."', etat='".$data["etat"]
-		."', edition='".$data["edition"]
-		."', datePublic='".$data["datePublic"]
-		."', quantite='".$data["quantite"]
-		."', noteDocument='".$data["noteDocument"]
-		."', description='".$data["description"]
-		."' WHERE idProduit=$id");
-		if (!$result) {
-			print_r($this->connection->error_list);
-			echo "Echec de la suppression.";
-		}
-		
-		// Création de l'action correspondante.
-		$nom = $this->produit->getNomProduit();
-		$p = $this->produit;
-		$description = "Suppression du produit $nom. ";
-		$sqlPourAnnuler = "INSERT INTO db.Produit (idProduit, nomProduit, auteur, etat, edition, datePublic, quantite, noteDocument, description) VALUES (".$p->getIdProduit().",'".$p->getNomProduit()."','".$p->getEtat()."','".$p->getDatePublic()."','".$p->getQuantite()."','".$p->getNoteProduit()."','".$p->getDescription()."')";
-		
-		Actions_ADO::createAction($this->connection, $description, $sqlPourAnnuler);
-    }
-    function supprimerProduit_ADO(){
-    	$id = $this->produit->getIdProduit();
-		
-		$result = $this->connection->query("DELETE FROM db.Produit WHERE idProduit=$id");
-		if (!$result) {
-			print_r($this->connection->error_list);
-			echo "Echec de la suppression.";
-		}
-		
-		// Création de l'action correspondante.
-		$nom = $this->produit->getNom();
-		$p = $this->produit;
-		$description = "Suppression du produit $nom. ";
-		$sqlPourAnnuler = $sql = "INSERT INTO db.Produit (idProduit, nomProduit, auteur, etat, edition, datePublic, quantite, noteDocument, description) VALUES (".$p->getIdProduit()."','".$p->getNomProduit()."','".$p->getAuteur()."','".$p->getEtat()."','"."','".$p->getEdition().$p->getDatePublic()."','".$p->getQuantite()."','".$p->getNoteProduit()."','".$p->getDescription()."')";
-		
-		Actions_ADO::createAction($this->connection, $description, $sqlPourAnnuler);
-    }
-    function emprunterProduit_ADO($idClient){
-    	$sql = "INSERT INTO db.Emprunt ()VALUES"
-    }
-    function ajouterProduit_ADO($data){
-    	$this->produit = new Produit($data);
-		$p = $this->produit;
-		$sql = "INSERT INTO db.Produit (nomProduit, auteur, etat, edition, datePublic, quantite, noteDocument, description) VALUES ('".$p->getNomProduit()."','".$p->getAuteur()."','".$p->getEtat()."','"."','".$p->getEdition().$p->getDatePublic()."','".$p->getQuantite()."','".$p->getNoteProduit()."','".$p->getDescription()."')";
-		echo $sql;
-		$result = $this->connection->query($sql);
-		if (!$result) {
-			print_r($this->connection->error_list);
-			echo "Echec de l'ajout.";
-		}
-    }
-    function prolongerEmprunt_ADO(){
-    	// TODO	
-    }
 }
 
 class Action_ADO {
@@ -563,7 +429,6 @@ class Connexion_ADO {
 			$usager["email"] = trim($email);
 			$usager["prenom"] = $personne->getPrenom();
 			$usager["nom"] = $personne->getNom();
-			$usager["idPersonne"] = $personne->getIdPersonne();
 			
 			$id = $personne->getIdPersonne();
 			$salarie = $this->connection->query("SELECT * FROM db.Salarie where Salarie.idPersonne = $id");
@@ -584,7 +449,7 @@ class Connexion_ADO {
 		 //   return VueAccueil; faut dire que la personne accéde a l'accueil du site 
 	    }
 	    else {
-			echo "Connexion échouée, merci de vérifier vos identifiants !";
+			echo "wrong";
 		    // echo "Connexion échoué, merci de vérifier vous identifiants !";
 			return false;
 		    // return VueConnexion ; renvoie la personne vers l'interface connexion pour qu'il réessaye.
@@ -608,11 +473,11 @@ class Inscription_ADO {
 	}
 	
 	function inscription($data){
-		$email = $data["emailClient"];
-		$nom = $data["nomClient"];
-		$prenom = $data["prenomClient"];
-		$mdp = $data["mdpClient"];
-		$adresseClient = $data["addrClient"];
+		$email = $data["email"];
+		$nom = $data["nom"];
+		$prenom = $data["prenom"];
+		$mdp = $data["mdp"];
+		$adresseClient = $data["adresse"];
 		
 		$result = $this->connection->query("INSERT INTO db.Personne (email, prenom, nom, mdp) VALUES('$email','$prenom','$nom','$mdp')");
 		if (!$result) {
@@ -620,7 +485,7 @@ class Inscription_ADO {
 			die("Echec de l'inscription.");
 		}
 		
-		$result = $this->connection->query("INSERT INTO db.Client (adresseClient) VALUES ('$adresseClient')");
+		$result = $this->connection->query("INSERT INTO db.Client (adresseClient) VALUES ('$mdp')");
 		if (!$result) {
 			print_r($this->connection->error_list);
 			die("Echec de l'inscription.");
@@ -629,7 +494,7 @@ class Inscription_ADO {
 		}
 	}
 }
-
+}
 class Liste_Salarié_ADO {
     public $salaries;
     public $recherche;
@@ -655,8 +520,8 @@ class Liste_Salarié_ADO {
 class Mon_Compte_ADO {
     public $vue;
     public $client;
-	function __construct($id) {
-		
+	function __construct() {
+		$id=this->Personne->getIdPersonne();
 		$this->connection = new mysqli($GLOBALS["servername"], $GLOBALS["username"], $GLOBALS["password"]);
 		if ($this->connection->connect_error) {
 			die("Connection failed: " . $this->connection->connect_error);
@@ -675,6 +540,7 @@ class Mon_Compte_ADO {
     	// TODO
     }
 }
+}
 class Liste_Produit_ADO {
     public $vue;
     public $produits;
@@ -685,30 +551,58 @@ class Liste_Produit_ADO {
 			die("Connection failed: " . $this->connection->connect_error);
 		}
 	}
+		
+    function affiche_InfoProduit_ADO($idP){
+    	$result = $this->connection->query("SELECT * FROM db.Produit WHERE idProduit='$idP'");
+		if (!$result) {
+		print_r($this->connection->error_list);
+		echo "Produit introuvable.";}
+    }
+    
+	function ajouterProduit_ADO($nomProduit, $auteur, $etat, $categorie, $edition, $datePublic, $quantite, $noteProduit, $description){
+    	$result = $this->connection->query("INSERT INTO Produit VALUES (seq_produit.nextval,'$nomProduit', '$auteur', '$etat', '$categorie', '$edition', '$datePublic', '$quantite', '$noteProduit', '$description'");
+		if (!$result) {
+			print_r($this->connection->error_list);
+			echo "Erreur lors de l'ajout du produit.";}
+		}
+    }
 	
     function affiche_Accueil_ADO(){
     	// TODO	
     }
+    function modifierProduit_ADO($nomProduit, $auteur, $etat, $categorie, $edition, $datePublic, $quantite, $noteProduit, $description){
+			$result = $this->connection->query("UPDATE Produit SET nomProduit='$nomProduit',auteur='$auteur', etat='$etat', categorie='$categorie',edition= '$edition', datePublic='$datePublic', quantite='$quantite', noteProduit='$noteProduit', description='$description'");
+			if (!$result) {
+				print_r($this->connection->error_list);
+				echo "Erreur lors la modification du produit.";
+			}
+    }
     function supprimerProduit($id){
-		$result = $this->connection->query("DELETE FROM PRODUIT WHERE idProduit='$id'");
+			$result = $this->connection->query("DELETE FROM PRODUIT WHERE idProduit='$id'");
+			if (!$result) {
+				print_r($this->connection->error_list);
+				echo "Erreur lors de la suppression du produit.";
+			}
+    }
+    function emprunterProduit($idProduit,$idClient,$date_emprunt,$date_retour){
+		$result = $this->connection->query("INSERT INTO Emprunt (idClient, idProduit, date_emprunt, date_retour)VALUES ('$idClient', '$idProduit', '$date_emprunt', '$date_retour')");
 		if (!$result) {
 			print_r($this->connection->error_list);
 			echo "Erreur lors de la suppression du produit.";
 		}
-    }
-}
+	}
 		
 class Liste_Client_ADO {
     public $affiche_NouveauClient_ADO;
     public $vue;
     public $clients;
 	    
-	function __construct() {
+	function __construct() (
 		$this->connection = new mysqli($GLOBALS["servername"], $GLOBALS["username"], $GLOBALS["password"]);
 		if ($this->connection->connect_error) {
 				die("Connection failed: " . $this->connection->connect_error);
 		}
-	}
+	)
     function ajouterClient_ADO($email, $mdp, $nom, $prenom){
     	$result = $this->connection->query("INSERT INTO Client VALUES (seq_client.nextval,'$email', '$prenom', '$nom', '$mdp'");
 			if (!$result) {
@@ -720,6 +614,13 @@ class Liste_Client_ADO {
 		if (!$result) {
 			print_r($this->connection->error_list);
 			echo "Erreur lors de la supression du client.";
+		}
+    }
+    function modifierClient_ADO($email, $mdp, $nom, $prenom){
+    	$result = $this->connection->query("UPDATE Client SET email='$email', mdp='$mdp', nom='$nom', prenom='$prenom' WHERE Client WHERE email='$email'");
+		if (!$result) {
+			print_r($this->connection->error_list);
+			echo "Erreur lors de la modification d'un client.";
 		}
     }
     function affiche_InfoClient_ADO($id){
@@ -739,13 +640,9 @@ class Liste_Client_ADO {
 class Nouveaux_Clients_ADO {
     public $vue;
     public $clients;
-	function __construct() {
-		$this->connection = new mysqli($GLOBALS["servername"], $GLOBALS["username"], $GLOBALS["password"]);
-		if ($this->connection->connect_error) {
+	$this->connection = new mysqli($GLOBALS["servername"], $GLOBALS["username"], $GLOBALS["password"]);
+	if ($this->connection->connect_error) {
 			die("Connection failed: " . $this->connection->connect_error);
-		}
-	}
-	
     function valider_Compte_ADO($id){
     	$result = $this->connection->query("UPDATE Client SET CompteValide=1 WHERE id='$id'");
 			if (!$result) {
@@ -755,4 +652,3 @@ class Nouveaux_Clients_ADO {
     function affiche_InfoClient_ADO(){
     	// TODO	
     }
-}
