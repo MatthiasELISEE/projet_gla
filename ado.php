@@ -321,7 +321,6 @@ class Action_ADO {
 			die("Connection failed: " . $this->connection->connect_error);
 		}
 		
-		echo "SELECT * FROM db.Action ORDER BY idAction DESC";
 		$result = $this->connection->query("SELECT * FROM db.Action");
 		if (!$result or $result->num_rows == 0) {
 			print_r($this->connection->error_list);
@@ -331,10 +330,7 @@ class Action_ADO {
 	}
 	
     function valider_action_ADO($id){
-				print_r($this->actions[$id]);
     	$this->actions[$id]["validee"] = 1;
-		echo "UPDATE db.Action SET validee=1 WHERE id=$id";
-		print_r($this->actions[$id]);
 		$result = $this->connection->query("UPDATE db.Action SET validee=1 WHERE idAction=$id");
 		if (!$result) {
 			print_r($this->connection->error_list);
@@ -343,7 +339,6 @@ class Action_ADO {
     }
     function annuler_action_ADO($id){
     	$this->actions[$id]["validee"] = -1;
-		echo "UPDATE db.Action SET validee=-1 WHERE id=$id";
 		$result = $this->connection->query("UPDATE db.Action SET validee=1 WHERE idAction=$id");
 		if (!$result) {
 			print_r($this->connection->error_list);
@@ -389,44 +384,78 @@ class Reservation {
 		$this->dateReservation = $data["dateReservation"];
 		
 	}
-	
-
     function getIdReservation(){
     	return $this->idReservation;
     }
     function getIdAbonne(){
-	return $this->idAbonne;
+		return $this->idAbonne;
     }
     function getIdDocument(){
-	return $this->idDocument;
+		return $this->idDocument;
     }
     function setIdAbonne($nom){
     	$this->idAbonne = $nom;
     }
     function getDateReservation(){
-	return $this->dateReservation;
+		return $this->dateReservation;
     }
     function setDateReservation($date){
     	$this->dateReservation = $date;
     }
-  
 }
 
 
 class Connexion_ADO {
     public $vue;
-    public $personneConnectee;
+	public $connection;
+	
+	function __construct() {
+		$this->connection = new mysqli($GLOBALS["servername"], $GLOBALS["username"], $GLOBALS["password"]);
+		if ($this->connection->connect_error) {
+			die("Connection failed: " . $this->connection->connect_error);
+		}
+	}
+	
     function identification($email,$mdp){
-	    $motDeP=$this->connection->query("SELECT Personne.mdp FROM db.Personne where Personne.email=$email");
-	    if ($mdp == $motDeP) {
-		    echo "Connection Réussie";
+	    $result = $this->connection->query("SELECT * FROM db.Personne where Personne.email='$email'");
+		if (!$result) {
+			print_r($this->connection->error_list);
+			die("Echec de la connexion.");
+		}
+		
+		$personne = new Personne($result->fetch_assoc());
+		
+	    if ($personne->getMdp() == trim($mdp)) {
+			$usager["email"] = trim($email);
+			$usager["prenom"] = $personne->getPrenom();
+			$usager["nom"] = $personne->getNom();
+			
+			$id = $personne->getIdPersonne();
+			$salarie = $this->connection->query("SELECT * FROM db.Salarie where Salarie.idPersonne = $id");
+			if (!$salarie) {
+				print_r($this->connection->error_list);
+				echo "Echec de la requête SQL.";
+			}
+			
+			if ($salarie->num_rows > 0) {
+				$usager["salarie"] = 1;
+				$usager["estManager"] = $salarie->fetch_assoc()["estManager"];
+			} else {
+				$usager["salarie"] = 0;
+			}
+			
+			$_SESSION["usager"] = $usager;
+			return true;
 		 //   return VueAccueil; faut dire que la personne accéde a l'accueil du site 
 	    }
 	    else {
-		    echo "Connexion échoué, merci de vérifier vous identifiants !";
+			echo "wrong";
+		    // echo "Connexion échoué, merci de vérifier vous identifiants !";
+			return false;
 		    // return VueConnexion ; renvoie la personne vers l'interface connexion pour qu'il réessaye.
 	    }
-		    
-	   	
     }
 }
+
+$connexion = new Connexion_ADO();
+$connexion->identification("test","b");
